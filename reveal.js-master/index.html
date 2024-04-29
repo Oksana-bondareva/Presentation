@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Asynchronous Programming in JavaScript</h1>
+				</section>
+				<section>In JavaScript, asynchronous programming is a crucial concept that allows your code to run in the background without blocking the execution of other code. Let’s delve into what it means and why it’s essential.</section>
+				<section>
+					<h2>Synchronous Programming</h2>
+					<p>Consider the following synchronous code snippet:</p>
+					<pre>
+						<code>
+							const name = "Ann";
+							const greeting = `Hello, my name is ${name}!`;
+							console.log(greeting); // "Hello, my name is Ann!"
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>Even if we call a separate function, like this:</p>
+					<pre>
+						<code>
+							function makeGreeting(name) {
+								return `Hello, my name is ${name}!`;
+							}
+							  
+							const name = "Ann";
+							const greeting = makeGreeting(name);
+							console.log(greeting); // "Hello, my name is Ann!"
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>The Need for Asynchronous Programming</h2>
+				</section>
+				<section>
+					<pre>
+						<code>
+							<label for="quota">Number of primes:</label>
+							<input type="text" id="quota" name="quota" value="1000000" />
+							<button id="generate">Generate primes</button>
+							<button id="reload">Reload</button>
+							<div id="output"></div>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<ul> Common examples of asynchronous tasks in JavaScript include:
+						<li>Making HTTP requests using fetch()</li>
+						<li>Accessing a user’s camera or microphone using getUserMedia()</li>
+						<li>Asking a user to select files using showOpenFilePicker()</li>
+					</ul>
+				</section>
+				<section>
+					<ul> You can achieve this using
+						<li>Callbacks: Functions passed as arguments to other functions, executed when a task completes.</li>
+						<li>Promises: A cleaner way to handle asynchronous operations, allowing chaining and better error handling.</li>
+						<li>async/await: A modern approach that simplifies working with promises, making code more readable</li>
+					</ul>
+				</section>
+			</div>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
