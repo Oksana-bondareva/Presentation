@@ -73,6 +73,102 @@
 						<li>async/await: A modern approach that simplifies working with promises, making code more readable</li>
 					</ul>
 				</section>
+				<section>
+					<p>Using Callbacks</p>
+					<pre>
+						<code>
+							function myDisplayer(some) {
+								document.getElementById("demo").innerHTML = some;
+							}
+							  
+							function myCalculator(num1, num2, myCallback) {
+								let sum = num1 + num2;
+								myCallback(sum);
+							}
+							  
+							myCalculator(5, 5, myDisplayer);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<ul> Practical Use Cases
+						<li>HTTP Requests</li>
+						<li>Event Handling</li>
+						<li>Timers and Intervals</li>
+					</ul>
+				</section>
+				<section>
+					<p>What Are Promises?</p>
+					<ul>It can be in one of three states:
+						<li>Pending: Initial state, neither fulfilled nor rejected.</li>
+						<li>Fulfilled: Operation completed successfully.</li>
+						<li>Rejected: Operation failed.</li>
+					</ul>
+				</section>
+				<section>
+					<p>Promises can be chained using methods like then(), catch(), and finally()</p>
+					<pre>
+						<code>
+							function fetchData() {
+								return new Promise((resolve, reject) => {
+								  // Simulate fetching data (e.g., from an API)
+								  setTimeout(() => {
+									const data = { message: "Data fetched successfully" };
+									resolve(data); // Resolve the promise
+								  }, 1000);
+								});
+							}
+							  
+							// Usage
+							fetchData()
+								.then((result) => {
+								  console.log(result.message);
+								})
+								.catch((error) => {
+								  console.error("Error:", error);
+								});
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>Async/await: A Comfortable Approach to Promises</p>
+					<pre>
+						<code>
+							async function fetchData() {
+								return 1;
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>It ensures that the function always returns a promise.</p>
+					<pre>
+						<code>
+							async function fetchData() {
+								return 1;
+							  }
+							  
+							fetchData().then(alert); // Outputs: 1
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>The await keyword works only inside async functions.</p>
+					<pre>
+						<code>
+							async function fetchWithDelay() {
+								let promise = new Promise((resolve, reject) => {
+								  setTimeout(() => resolve("done!"), 1000);
+								});
+							  
+								let result = await promise;
+								alert(result); // Outputs: "done!"
+							}
+				
+							fetchWithDelay();
+						</code>
+					</pre>
+				</section>
 			</div>
 			</div>
 		</div>
